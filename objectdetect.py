@@ -25,13 +25,10 @@ while True:
         break
     elif k%256 == 32:
         #SPACE pressed
-        #saving the captured image as png
         img_name = "E:\Github\CapturedImg.png"
         cv2.imwrite(img_name, frame)
-        print("Process begins.....................................")
-        #reading the captured image as png
-	    image = cv2.imread("E:\Github\CapturedImg.png")
-        #converting to grey scale
+        print("Process begins..")
+        image = cv2.imread("E:\Github\CapturedImg.png")
         gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
         gray = cv2.GaussianBlur(src=gray, ksize=(3, 5), sigmaX=0.5)
         cv2.imshow("Gray", gray)
